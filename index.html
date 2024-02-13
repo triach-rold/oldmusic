@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Triach Rold's Cafe</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        @media screen and (max-width: 600px) {
+            .vinyl-image {
+                max-width: 80%;
+            }
+            .sign-image-container {
+                max-width: 80%;
+            }
+            .sign-image {
+                width: 100%;
+            }
+            .headkil {
+                width: 90%;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="background">
@@ -21,9 +37,9 @@
         </div>
         <div class="shortcut-instructions">
             <br><br><br>
-            <p>Press 's' to skip to the next song.</p>
-            <p>Press 'p' to play at 20 times faster.</p>
-            <p>Press 'q' to pause the music.</p>
+            <p id="skip">Press 's' to skip to the next song.</p>
+            <p id="play">Press 'p' to play at 20 times faster.</p>
+            <p id="pause">Press 'q' to pause the music.</p>
             <p id="timeLeft">Time Left: --:--</p>
         </div>
     </div>

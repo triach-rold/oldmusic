@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let isPlayingFast = false;
     let shuffledSongs = shuffleSongs();
     
-    const backgroundsFolder = "assets/Backgrounds/";
-    const numBackgrounds = 18; // Number of backgrounds available
+    const backgroundsFolder = "assets/backgrounds/";
+    const numBackgrounds = 19; // Number of backgrounds available
     
     function getRandomBackground() {
         return Math.floor(Math.random() * numBackgrounds);
@@ -61,35 +61,46 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.addEventListener("keypress", function(event) {
         if (event.key === "s") {
-            currentSong++;
-            if (currentSong >= numSongs) {
-                currentSong = 0;
-                shuffledSongs = shuffleSongs(); 
-            }
-            playSong();
+            skipToNextSong();
         } else if (event.key === "p") {
-            if (isPlayingFast) {
-                audioPlayer.playbackRate = 1;
-                isPlayingFast = false;
-            } else {
-                audioPlayer.playbackRate = 20;
-                isPlayingFast = true;
-            }
+            togglePlaybackSpeed();
         } else if (event.key === "q") {
-            if (audioPlayer.paused) {
-                audioPlayer.play();
-            } else {
-                audioPlayer.pause();
-            }
+            togglePlayback();
         }
     });
 
-    audioPlayer.addEventListener("ended", function() {
+    // Function to handle skipping to the next song
+    function skipToNextSong() {
         currentSong++;
         if (currentSong >= numSongs) {
             currentSong = 0;
             shuffledSongs = shuffleSongs(); 
         }
         playSong();
-    });
+    }
+
+    // Function to handle toggling playback speed
+    function togglePlaybackSpeed() {
+        if (isPlayingFast) {
+            audioPlayer.playbackRate = 1;
+            isPlayingFast = false;
+        } else {
+            audioPlayer.playbackRate = 20;
+            isPlayingFast = true;
+        }
+    }
+
+    // Function to handle toggling playback
+    function togglePlayback() {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+        } else {
+            audioPlayer.pause();
+        }
+    }
+
+    // Add touch event listeners for mobile devices
+    document.getElementById("skip").addEventListener("click", skipToNextSong);
+    document.getElementById("play").addEventListener("click", togglePlaybackSpeed);
+    document.getElementById("pause").addEventListener("click", togglePlayback);
 });
