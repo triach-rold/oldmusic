@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let isPlayingFast = false;
     let shuffledSongs = shuffleSongs();
     
-    const backgroundsFolder = "assets/backgrounds/";
+    const backgroundsFolder = "assets/Backgrounds/";
     const numBackgrounds = 19; // Number of backgrounds available
     
     function getRandomBackground() {
