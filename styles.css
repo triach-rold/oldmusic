@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1;
+    /* Add your background image styles here */
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+    position: relative;
+}
+
+@font-face {
+    font-family: 'Grouch';
+    src: url('grouch.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Monogram';
+    src: url('monogram.ttf') format('truetype');
+}
+@font-face {
+    font-family: "Suisse Works Bold";
+    src: url("https://db.onlinewebfonts.com/t/27cb2381f8e348c531e19a16b9921082.eot");
+    src: url("https://db.onlinewebfonts.com/t/27cb2381f8e348c531e19a16b9921082.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/27cb2381f8e348c531e19a16b9921082.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/27cb2381f8e348c531e19a16b9921082.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/27cb2381f8e348c531e19a16b9921082.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/27cb2381f8e348c531e19a16b9921082.svg#Suisse Works Bold")format("svg");
+}
+p {
+    font-family: 'Monogram';
+    color: gold;
+    font-size: 25px;
+}
+.headkil{
+    width: 800px;
+    height:auto;
+    margin-bottom: 20px ;
+}
+
+h1 {
+    font-size: 80px;
+    color: gold;
+    font-family: 'Grouch', Arial, sans-serif; /* Use Grouch font, fallback to Arial or sans-serif */
+}
+
+.vinyl-image {
+    margin-bottom: 0px; /* Adjust the value as needed */
+    top: -20px;
+}
+
+.sign-image-container {
+    position: relative;
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+.sign-image {
+    position: absolute;
+    left: 50%;
+    top:-80px;
+    transform: translateX(-48%);
+    z-index: 0;
+    width: 920px; /* Adjust the width as needed */
+    height: auto;
+}
+
+.shortcut-instructions {
+    position: relative;
+    z-index: 1;
+    /* Add your shortcut instructions styles here */
+}
